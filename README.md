@@ -8,5 +8,5 @@ Ticket finder library for National Express UK
 ### core features
 - [ ] Station Search
 - [ ] Route search
-## additional features
+### additional features
 - [ ] Check Journey
