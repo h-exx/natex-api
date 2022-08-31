@@ -1,0 +1,24 @@
+{
+  "name": "natex-api",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Ticket finder library for National Express UK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-exx/natex-api.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h-exx/natex-api/issues"
+  },
+  "homepage": "https://github.com/h-exx/natex-api#readme",
+  "dependencies": {
+    "got": "^12.3.1",
+    "node-fetch": "^3.2.10"
+  }
+}
