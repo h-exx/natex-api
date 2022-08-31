@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export default async (place) => {
+export default function async (place) {
     return new Promise (async (resolve, reject) => {
         await fetch(`https://www.nationalexpress.com/umbraco/api/stationsapi/search?term=${encodeURI(place)}&isorigin=true&disableGeoSearch=True`, {
             method: 'GET',
