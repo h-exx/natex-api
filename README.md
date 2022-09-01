@@ -33,4 +33,5 @@ natex.stationSearch('london');
 - [x] Station Search
 - [ ] Route search
 ### additional features
+- [ ] Bypass ratelimit of route search of 3req/m
 - [ ] Check Journey
