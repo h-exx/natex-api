@@ -27,7 +27,7 @@ natex.stationSearch('london'); // Expected input: a place
 }
 */
 
-natex.routeSearch(43345, 57366, { // Expected input: Departure ID, Arrival ID
+natex.routeSearch(43345, 57366, { // Expected input: Departure ID, Arrival ID, optional: options (specified below)
   leaving: {
     departAfterOrArriveBy: 'DEPART_AFTER' // options: DEPART_AFTER, ARRIVE_BY default: DEPART_AFTER
     date: "16/09/2022", // default: Date.now()
