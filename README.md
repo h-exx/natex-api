@@ -9,6 +9,7 @@ Ticket finder library for National Express UK
 import * as natex from 'natex-api';
 natex.stationSearch('london'); // Expected input: a place
 /* Expected output:
+[
 {
   locationName: 'LONDON (Most Popular)',
   locationCode: '57000',
@@ -22,15 +23,17 @@ natex.stationSearch('london'); // Expected input: a place
   isAirport: false,
   latitude: '51.492670', // these are null as the location is not a specific location. most locations will have a latitude and longitude
   longitude: '-0.149220',
-},{
+},
+{
 ...
 }
+]
 */
 
-natex.routeSearch(43345, 57366, { // Expected input: Departure ID, Arrival ID, optional: options (specified below)
+natex.routeSearch(41000, 57000, { // Expected input: Departure ID, Arrival ID, optional: options (specified below)
   leaving: {
     departAfterOrArriveBy: 'DEPART_AFTER' // options: DEPART_AFTER, ARRIVE_BY default: DEPART_AFTER
-    date: "16/09/2022", // default: Date.now()
+    date: "20/09/2022", // default: Date.now()
     time: "00:00" // default: Date.now()
   },
   passengers: {
@@ -45,12 +48,52 @@ natex.routeSearch(43345, 57366, { // Expected input: Departure ID, Arrival ID, o
   }
 });
 /* Expected output:
+[
 {
-  departureID: "43345",
-  departureName: "PLYMOUTH Coach Station, Armada Way",
+  departureID: "41065",
+  departureName: "BRISTOL Bus & Coach Station",
   destinationID: "57366",
-  destinationName: "LONDON VICTORIA Coach Station"
+  destinationName: "LONDON VICTORIA Coach Station",
+  busNumber: "040",
+  isAvailable: true
+  departureDateTime: "2022-09-20T12:00:00"
+  arrivalDateTime: "2022-09-20T15:00:00"
+  fare: {
+    amount: "8.90" // Will always be pounds
+    discount: "0"
+  },
+  seats: {
+    lowAvailability: false
+    seatStock: 29,
+    maxCapacity: 72,
+    unbookReason: null
+  }
+},
+{
+  departureID: "41065",
+  departureName: "BRISTOL Bus & Coach Station",
+  destinationID: "57286",
+  destinationName: "HEATHROW Airport London T2,3 (LHR)",
+  busNumber: "201",
+  isAvailable: false
+  departureDateTime: "2022-09-20T13:00:00"
+  arrivalDateTime: "2022-09-20T15:05:00"
+  fare: {
+    amount: "54" // Will always be pounds
+    discount: "0"
+  },
+  seats: {
+    lowAvailability: false
+    seatStock: 0,
+    maxCapacity: 53,
+    unbookReason: "Seat Availability"
+  }
+},
+{
+...
 }
+]
+
 */
 ```
 
@@ -62,4 +105,4 @@ natex.routeSearch(43345, 57366, { // Expected input: Departure ID, Arrival ID, o
 - [ ] Bypass ratelimit of route search of 3req/m
 - [ ] Ability to search for return journeys
   - afaik National Express dont have a discount on returns
-- [ ] Check Journey
+- [ ] Look for all Journey stops
