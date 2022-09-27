@@ -3,6 +3,10 @@
 # natex-api
 Ticket finder library for National Express UK
 
+<details><summary>Changelog</summary>
+  0.0.1 - :tada: Released with all core features
+</details>
+
 
 # EXAMPLES
 ```js
