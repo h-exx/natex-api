@@ -1,7 +1,7 @@
-# NOTE: This only shows direct journeys, not ones with connections
-
 # natex-api
 Ticket finder library for National Express UK
+
+#### fyi, this currently does not display connections correctly, only the first journey
 
 <details><summary>Changelog</summary>
   0.0.1 - :tada: Released with all core features
