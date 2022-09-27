@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 export default function async (from, to, options) {
     if (!options) {options = {leaving:{},passengers:{},coachCards:{}};}
     const nowdate = new Date().toISOString().split('T');
-    console.log(nowdate);
     let formatted = []
     formatted[0] = nowdate[0].split('-').reverse().join('/');
     formatted[1] = nowdate[1].split(':').slice(0,2).join(':');
