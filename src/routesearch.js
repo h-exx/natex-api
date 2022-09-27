@@ -13,7 +13,7 @@ export default function async (from, to, options) {
     return new Promise (async (resolve, reject) => {
         await fetch(`https://book.nationalexpress.com/nxrest/journey/search/OUT`, {
             method: 'POST',
-            headers: {'User-Agent': `natex-api/0.0.2`, 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'content-type': 'application/json'},
+            headers: {'User-Agent': `natex-api/0.0.3`, 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'content-type': 'application/json'},
             body: JSON.stringify({
                 coachCard: haveCoachCard,
                 campaignId: "DEFAULT",
