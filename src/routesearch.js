@@ -66,6 +66,8 @@ export default function async (from, to, options) {
                 switch(responseJSON.errorMessage) {
                     case 'errors.noResults':
                         return resolve([]);
+                    default:
+                        return reject(new Error(responseJSON.errorMessage));
                 };
             }
             let route = [];

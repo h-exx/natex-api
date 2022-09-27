@@ -5,7 +5,7 @@ Ticket finder library for National Express UK
 
 <details><summary>Changelog</summary>
 
-- **0.0.2** - 🐛 whoops. forgot to fix date and time on routesearch
+- **0.0.2** - 🐛 whoops. forgot a couple things. bugfixes
 - **0.0.1** - :tada: Released with all core features
 </details>
 
