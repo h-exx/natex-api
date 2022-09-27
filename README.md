@@ -1,4 +1,4 @@
-# ⚠️⚠️⚠️ WORK IN PROGRESS
+# NOTE: This only shows direct journeys, not ones with connections
 
 # natex-api
 Ticket finder library for National Express UK
@@ -100,7 +100,9 @@ natex.routeSearch(41000, 57000, { // Expected input: Departure ID, Arrival ID, o
 # TODO
 ### core features
 - [x] Station Search
-- [ ] Route search
+- [x] Route search
+### additional core feature
+- [ ] Display multiple connections for Route Search
 ### additional features
 - [ ] Bypass ratelimit of route search of 3req/m
 - [ ] Ability to search for return journeys
