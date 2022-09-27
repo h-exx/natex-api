@@ -4,7 +4,7 @@ export default function async (place) {
     return new Promise (async (resolve, reject) => {
         await fetch(`https://www.nationalexpress.com/umbraco/api/stationsapi/search?term=${encodeURI(place)}&isorigin=true&disableGeoSearch=True`, {
             method: 'GET',
-            headers: {'User-Agent': `natex-api/0.0.3`, 'Accept': 'application/json', 'Accept-Encoding': 'gzip, deflate, br'}
+            headers: {'User-Agent': `natex-api/0.0.4`, 'Accept': 'application/json', 'Accept-Encoding': 'gzip, deflate, br'}
         }).then(async res => {
             let response = await res.json();
             let stations = [];
