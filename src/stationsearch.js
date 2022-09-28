@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 export default function async (place) {
     return new Promise (async (resolve, reject) => {
-        await fetch(`https://www.nationalexpress.com/umbraco/api/stationsapi/search?term=${encodeURI(place)}&isorigin=true&disableGeoSearch=True`, {
+        await fetch(`https://www.nationalexpress.com/umbraco/api/stationsapi/search?term=${encodeURIComponent(place)}&isorigin=true&disableGeoSearch=True`, {
             method: 'GET',
             headers: {'User-Agent': `natex-api/0.0.4`, 'Accept': 'application/json', 'Accept-Encoding': 'gzip, deflate, br'}
         }).then(async res => {
