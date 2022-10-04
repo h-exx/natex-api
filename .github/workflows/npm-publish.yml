@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm test
+      - run: eslint index.js ./src/*.js
 
   publish-npm:
     needs: build
