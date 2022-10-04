@@ -1,7 +1,7 @@
 {
   "name": "natex-api",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ticket finder library for National Express UK",
   "keywords": ["nationalexpress", "natex", "ticket", "finder", "uk"],
   "main": "index.js",
