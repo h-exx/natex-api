@@ -5,6 +5,7 @@ Ticket finder library for National Express UK
 
 <details><summary>Changelog</summary>
 
+- **0.1.0** - ✨ Added the ability to see changes
 - **0.0.2+3** - 🐛 whoops. forgot a couple things. bugfixes
 - **0.0.1** - :tada: Released with all core features
 </details>
