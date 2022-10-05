@@ -8,12 +8,12 @@ export default function async (from, to, options) {
     formatted[0] = nowdate[0].split('-').reverse().join('/');
     formatted[1] = nowdate[1].split(':').slice(0,2).join(':');
     let haveCoachCard = false
-    if (options.coachCards) {haveCoachCard = true};
+    if (options.coachCards) {haveCoachCard = true}
 
-    return new Promise (async (resolve, reject) => {
-        await fetch(`https://book.nationalexpress.com/nxrest/journey/search/OUT`, {
+    return new Promise ( (resolve, reject) => {
+        fetch(`https://book.nationalexpress.com/nxrest/journey/search/OUT`, {
             method: 'POST',
-            headers: {'User-Agent': `natex-api/0.0.4`, 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'content-type': 'application/json'},
+            headers: {'User-Agent': `natex-api/0.0.5`, 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'content-type': 'application/json'},
             body: JSON.stringify({
                 coachCard: haveCoachCard,
                 campaignId: "DEFAULT",
@@ -67,7 +67,7 @@ export default function async (from, to, options) {
                         return resolve([]);
                     default:
                         return reject(new Error(responseJSON.errorMessage));
-                };
+                }
             }
             let route = [];
             responseJSON.journeyCommand.forEach((journey) => {
@@ -97,4 +97,4 @@ export default function async (from, to, options) {
             resolve(route);
         }).catch(err => {return reject(err);});
     });
-};
+}

@@ -1,12 +1,18 @@
 {
   "name": "natex-api",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ticket finder library for National Express UK",
-  "keywords": ["nationalexpress", "natex", "ticket", "finder", "uk"],
+  "keywords": [
+    "nationalexpress",
+    "natex",
+    "ticket",
+    "finder",
+    "uk"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint index.js ./src/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +27,8 @@
   "dependencies": {
     "node-fetch": "^3.2.10",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.24.0"
   }
 }
