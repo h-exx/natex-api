@@ -5,6 +5,7 @@ Ticket finder library for National Express UK
 
 <details><summary>Changelog</summary>
 
+- **0.1.0** - ✨ Added the ability to see changes
 - **0.0.2-5** - 🐛 whoops. forgot a couple things. bugfixes
 - **0.0.1** - :tada: Released with all core features
 </details>
@@ -13,6 +14,8 @@ Ticket finder library for National Express UK
 # EXAMPLES
 ```js
 import * as natex from 'natex-api';
+
+// Searching for stations
 natex.stationSearch('london'); // Expected input: a place
 /* Expected output:
 [
@@ -36,6 +39,7 @@ natex.stationSearch('london'); // Expected input: a place
 ]
 */
 
+/// Direct route
 natex.routeSearch(41000, 57000, { // Expected input: Departure ID, Arrival ID, optional: options (specified below)
   leaving: {
     departAfterOrArriveBy: 'DEPART_AFTER' // options: DEPART_AFTER, ARRIVE_BY default: DEPART_AFTER
@@ -101,7 +105,95 @@ natex.routeSearch(41000, 57000, { // Expected input: Departure ID, Arrival ID, o
 ]
 
 */
+
+/// Route with multiple changes
+natex.routeSearch(43345, 67157, { // Expected input: Departure ID, Arrival ID, optional: options (specified below)
+  leaving: {
+    departAfterOrArriveBy: 'DEPART_AFTER' // options: DEPART_AFTER, ARRIVE_BY default: DEPART_AFTER
+    date: "20/09/2022", // default: Date.now()
+    time: "00:00" // default: Date.now()
+  },
+  passengers: {
+    adults: 1, // default: 1
+    children: 0, // default: 0
+    infants: 0 // default: 0
+  },
+  coachCards: {
+    youthCoachcard: 0, // default: 0
+    seniorCoachard: 0, // default: 0
+    disabledCoachcard: 0 // default: 0
+  }
+});
+/* Expected output:
+[
+{
+  departureID: "43345",
+  departureName: "PLYMOUTH Coach Station, Armada Way",
+  destinationID: "67157",
+  destinationName: "GLASGOW",
+  isAvailable: true
+  departureDateTime: "2022-10-05T05:25:00"
+  arrivalDateTime: "2022-10-05T19:55:00"
+  fare: {
+    amount: "80.80" // Will always be pounds
+    discount: "0"
+  },
+  seats: {
+    lowAvailability: false
+    seatStock: 27,
+    maxCapacity: 53,
+    unbookReason: null
+  },
+  legs: [{
+    departureID: "43345",
+    departureName: "PLYMOUTH Coach Station, Armada Way",
+    destinationID: "33023",
+    destinationName: "BIRMINGHAM Coach Station",
+    brandName: "National Express",
+    busNumber: "101",
+    departureTime: "2022-10-05T05:25:00",
+    arrivalTime: "2022-10-05T11:00:00"
+  },
+  {
+    departureID: "33023",
+    departureName: "Birmingham Coach Station",
+    destinationID: "67157",
+    destinationName: "GLASGOW",
+    brandName: "National Express",
+    busNumber: "590",
+    departureTime: "2022-10-05T13:15:00",
+    arrivalTime: "2022-10-05T19:55:00"
+  },]
+},
+{
+  departureID: "41065",
+  departureName: "BRISTOL Bus & Coach Station",
+  destinationID: "57286",
+  destinationName: "HEATHROW Airport London T2,3 (LHR)",
+  busNumber: "201",
+  isAvailable: false
+  departureDateTime: "2022-09-20T13:00:00"
+  arrivalDateTime: "2022-09-20T15:05:00"
+  fare: {
+    amount: "54" // Will always be pounds
+    discount: "0"
+  },
+  seats: {
+    lowAvailability: false
+    seatStock: 0,
+    maxCapacity: 53,
+    unbookReason: "Seat Availability"
+  }
+},
+{
+...
+}
+]
+
+*/
 ```
+
+
 
 # TODO
 ### core features
